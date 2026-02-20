@@ -1,0 +1,110 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>master</Database>
+    <Server>PC</Server>
+    <ConnectionString>Data Source=PC;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>4fwwpu4jgSNfMEwu7IbSW+cESZo=20.11.2025 01:35:5220.11.2025 00:06:08</TimeStamp>
+        <ID>
+          <String>master</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>KLyYnacmVIIUM4VM0PyMacngKu4=20.11.2025 00:08:5420.11.2025 00:08:54</TimeStamp>
+        <ID>
+          <String>Master</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>xiP5RCks4g/041czIU2wCy7aRQQ=20.11.2025 00:47:5120.11.2025 00:38:28</TimeStamp>
+        <ID>
+          <String>MALFUNCTION DIM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>VL6AE8tXaMaCyJc2szX+yfPC3gc=20.11.2025 00:47:5120.11.2025 00:38:28</TimeStamp>
+        <ID>
+          <String>TRAM DIM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>3wcujW/Mq/iC8HWzsirE1t5dgdw=20.11.2025 00:47:5120.11.2025 00:38:28</TimeStamp>
+        <ID>
+          <String>DRIVER DIM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>xQEuudXeV7WJXjrMZWTbNeErvBE=20.11.2025 00:47:5120.11.2025 00:38:28</TimeStamp>
+        <ID>
+          <String>ROUTE DIM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>9EXDceHVcASGqS9HS5HIVOflo9M=20.11.2025 00:47:5120.11.2025 00:38:28</TimeStamp>
+        <ID>
+          <String>DATE DIM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Or9wX5GcYxguc6vVTMHGX378iLo=20.11.2025 00:47:5120.11.2025 00:38:28</TimeStamp>
+        <ID>
+          <String>STOP DIM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>fP11ZkXRxqozBE5lhaOMAUHC8e0=20.11.2025 00:47:5020.11.2025 00:38:28</TimeStamp>
+        <ID>
+          <String>TIME DIM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>crLJecOopf4A9HAEjpGgMxRj1EQ=20.11.2025 00:47:5120.11.2025 00:38:28</TimeStamp>
+        <ID>
+          <String>TRIP DIM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>yQO2CrQ6wSEmFYO8fNvKUw44W4Q=20.11.2025 00:47:5120.11.2025 00:38:28h1nHl6IMh02Q2SqfPgP8rgiALo4=20.11.2025 00:38:2820.11.2025 00:38:28</TimeStamp>
+        <ID>
+          <String>TripOperationsCube</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>FCurq4l+nM24Na4tY5SQJnyT8n8=19.11.2025 21:22:5919.11.2025 21:22:59</TimeStamp>
+      <ID>
+        <String>master</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2025-11-20T00:35:57.756667Z</LastDeployed>
+</DeploymentSnapshot>
