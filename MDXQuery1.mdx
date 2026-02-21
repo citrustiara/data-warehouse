@@ -1,0 +1,89 @@
+﻿// 1. Ranking miesięcy z największym opóźnieniem: Top... function
+/*
+SELECT 
+{ [Measures].[Delay Minutes] } ON 0, // 0 - wynik pokazuje sie jako kolumna
+TOPCOUNT([DATE DIM].[Calendar].[Month].Members, 5, [Measures].[Delay Minutes]) ON 1 // 1 - wynik  pokazuje sie jako wiersze
+FROM [Master]
+*/
+
+// 2. Obliczanie średniego opóźnienia na operację: Calculated member + Numerical operation
+/*
+WITH MEMBER [Measures].[Srednie Opoznienie] AS 
+[Measures].[Delay Minutes] / [Measures].[Trip Operations Fact Count]
+SELECT 
+{ [Measures].[Delay Minutes], [Measures].[Srednie Opoznienie] } ON 0,
+{ [DATE DIM].[Calendar].[Year].&[2024].Children } ON 1
+FROM [Master]
+*/
+
+// 3. Raport tylko dla roku 2025: WHERE clause
+/*
+SELECT 
+{ [Measures].[Trip Operations Fact Count] } ON 0,
+{ [DATE DIM].[Calendar].[Year].&[2025].Children } ON 1
+FROM [Master]
+*/
+
+// 4. Porównanie Miesiąc do Poprzedniego: MDX function on hierarchy (PrevMember)
+/*
+SELECT 
+{ [Measures].[Delay Minutes] } ON 0,
+{ [DATE DIM].[Calendar].[Month].Members.Item(4).PrevMember, 
+  [DATE DIM].[Calendar].[Month].Members.Item(4) } ON 1
+FROM [Master]
+*/      
+// 5. Analiza struktury roku: Hierarchy function (.Children)
+/*
+SELECT 
+{ [Measures].[Delay Minutes] } ON 0,
+{ [DATE DIM].[Calendar].[Year].Members.Item(2).Children } ON 1 // (2) wybieramy rok 2025
+FROM [Master]
+*/
+
+// 6. Identyfikacja okresów o najniższym natężeniu ruchu: Bottom... function
+/*
+SELECT 
+{ [Measures].[Trip Operations Fact Count] } ON 0,
+BOTTOMCOUNT(
+    [DATE DIM].[Calendar].Children, 
+    3, 
+    [Measures].[Trip Operations Fact Count]
+) ON 1
+FROM [Master]
+*/
+
+
+// 7.Naliza udziału procentowego okresu w skali całej bazy: Numerical operation (Dzielenie przez sumę All)
+/*
+WITH MEMBER [Measures].[Procent Calosci] AS 
+([DATE DIM].[Calendar].CurrentMember, [Measures].[Delay Minutes]) / 
+([DATE DIM].[Calendar].[All], [Measures].[Delay Minutes]), FORMAT_STRING = "Percent"
+SELECT 
+{ [Measures].[Delay Minutes], [Measures].[Procent Calosci] } ON 0,
+{ [DATE DIM].[Calendar].Children } ON 1
+FROM [Master]
+*/
+
+// 8. Wyciągnięcie statusu KPI : KPI Implementation
+/*
+SELECT 
+{ KPIValue("Opóźnienia Redukcja"), KPIStatus("Opóźnienia Redukcja") } ON 0,
+{ [DATE DIM].[Calendar].[Month].Members } ON 1
+FROM [Master]
+*/
+
+// 9. Filtracja miesięcy z opóźnieniem powyżej 1000 min: Filter function
+/*
+SELECT 
+{ [Measures].[Delay Minutes] } ON 0,
+FILTER([DATE DIM].[Calendar].[Month].Members, [Measures].[Delay Minutes] > 200000) ON 1
+FROM [Master]
+*/
+
+// 10. Analiza dwóch miar jednocześnie (Korelacja): Set of measures
+/*
+SELECT 
+{ [Measures].[Delay Minutes], [Measures].[Trip Operations Fact Count] } ON 0,
+NON EMPTY { [DATE DIM].[Calendar].[Month].Members } ON 1
+FROM [Master]
+*/
