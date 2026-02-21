@@ -2,7 +2,7 @@
 
 A university group project for the **Data Warehouses** course at Gdańsk University of Technology. The project involves designing and implementing a complete Business Intelligence system for a fictional tram transport organization (ZTM Gdańsk), focused on analyzing tram delays and malfunctions across the network.
 
-> **Note:** This was a group project. My responsibilities covered stages 1–6 (from requirements specification through ETL implementation). The later stages — MDX queries, Power BI dashboard, and query optimization — were handled by other team members.
+> **Note:** This was a group project. Stages 1–5 (from business process specification through data warehouse implementation) were done collaboratively. The ETL process (stage 6) was implemented entirely by me. The later stages — MDX queries, Power BI dashboard, and query optimization — were handled by other team members.
 
 ## Project Stages
 
@@ -60,4 +60,5 @@ Comparison of different physical cube models (MOLAP, ROLAP, HOLAP) with and with
 - **Reporting:** Power BI
 - **Data Generation:** Python (pandas, numpy)
 - **Query Languages:** T-SQL, MDX
+
 
