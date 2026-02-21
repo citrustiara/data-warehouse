@@ -60,4 +60,4 @@ Comparison of different physical cube models (MOLAP, ROLAP, HOLAP) with and with
 - **Reporting:** Power BI
 - **Data Generation:** Python (pandas, numpy)
 - **Query Languages:** T-SQL, MDX
-- **Data Format:** GTFS (General Transit Feed Specification)
+
